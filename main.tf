@@ -8,6 +8,9 @@
 * as outputs.
 *
 */
+terraform {
+	required_version = ">= 1.0, < 2.0.0"
+}
 
 locals {
   # lowercase everything and remove whitespace
@@ -22,7 +25,7 @@ locals {
 data "http" "pingdom_ranges" {
   url = "https://my.pingdom.com/probes/${var.protocol}"
 
-  request_headers {
+  request_headers = {
     Accept = "application/json"
   }
 }
