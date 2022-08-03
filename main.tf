@@ -23,6 +23,6 @@ data "http" "pingdom_ranges" {
   url = "https://my.pingdom.com/probes/${var.protocol}"
 
   request_headers {
-    "Accept" = "application/json"
+    Accept = "application/json"
   }
 }
